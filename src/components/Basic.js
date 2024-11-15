@@ -1,4 +1,3 @@
-// Basic.js
 import './chatBot.css';
 import React, { useEffect, useState } from 'react';
 import { IoMdSend } from 'react-icons/io';
@@ -7,7 +6,8 @@ import { BiBot, BiUser } from 'react-icons/bi';
 function Basic() {
     const [chat, setChat] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
-    const [botTyping, setbotTyping] = useState(false);
+    const [botTyping, setBotTyping] = useState(false);
+    const [userName, setUserName] = useState('');  // Added state for user name
 
     useEffect(() => {
         const objDiv = document.getElementById('messageArea');
@@ -16,14 +16,19 @@ function Basic() {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        const name = "shreyas";
-        const request_temp = { sender: "user", sender_id: name, msg: inputMessage };
+
+        if (!userName) {
+            alert("Please enter your name.");
+            return;
+        }
+
+        const request_temp = { sender: "user", sender_id: userName, msg: inputMessage };
 
         if (inputMessage !== "") {
             setChat(chat => [...chat, request_temp]);
-            setbotTyping(true);
+            setBotTyping(true);
             setInputMessage('');
-            rasaAPI(name, inputMessage);
+            rasaAPI(userName, inputMessage);
         } else {
             window.alert("Please enter a valid message");
         }
@@ -44,7 +49,7 @@ function Basic() {
                     const temp = response[0];
                     const recipient_msg = temp["text"];
                     const response_temp = { sender: "bot", msg: recipient_msg };
-                    setbotTyping(false);
+                    setBotTyping(false);
                     setChat(chat => [...chat, response_temp]);
                 }
             });
