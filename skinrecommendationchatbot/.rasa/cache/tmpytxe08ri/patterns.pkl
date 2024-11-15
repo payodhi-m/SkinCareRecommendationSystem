@@ -1,0 +1,6 @@
+[
+  {
+    "name": "product_category",
+    "pattern": "(\\bmoisturizer\\b|\\bcleaser\\b|\\bsun\\ protect\\b|\\beye\\ cream\\b|\\bface\\ mask\\b|\\btreatment\\b)"
+  }
+]
