@@ -122,14 +122,6 @@ In today's world, where finding suitable skincare products can be challenging du
 - **Enhanced Collaborative Filtering**: Incorporate neural collaborative filtering to improve recommendation accuracy.
 - **Integration with External Databases**: Directly retrieve product information from third-party databases for up-to-date recommendations.
 
-## Contributing
-
-We welcome contributions! To get started:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a Pull Request.
 
 
 ---
