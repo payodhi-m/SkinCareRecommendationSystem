@@ -10,7 +10,7 @@ function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <h1 style={styles.title}>Skincare Guru</h1>
+        <h1 style={styles.title}>Skincare AI</h1>
         <p style={styles.description}>
           Discover your perfect skincare routine with personalized recommendations tailored just for you.
         </p>

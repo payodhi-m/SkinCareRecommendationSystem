@@ -153,7 +153,7 @@ function Basic() {
         <div style={styles.container}>
             <div style={styles.card}>
                 <div style={styles.header}>
-                    AI Assistant
+                    Skincare AI Assistant
                     {botTyping && <h6>Bot Typing...</h6>}
                 </div>
                 <div style={styles.messageArea} id="messageArea">
