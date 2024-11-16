@@ -1,0 +1,65 @@
+version: "3.1"
+
+rules:
+  - rule: activate customer information form
+    conversation_start: true
+    steps: 
+      - intent: request_skincare
+      - action: customer_information_form
+      - active_loop: customer_information_form
+  
+  - rule: save customer information 
+    condition:
+    - active_loop: customer_information_form
+    steps:
+      - action: customer_information_form
+      - active_loop: null
+      - action: action_save_customer_information
+      - action: utter_proceed_for_deeper_analysis
+      #- action: action_proceed_to_story
+    #wait_for_user_input: false
+
+  - rule: activate product recommendation flow
+    steps:
+      - intent: affirm
+      - action: action_get_product_recommendation
+
+  # - rule: activate product recommendation
+  #   steps:
+  #   - intent: customer_preference
+  #   - action: utter_looking_for_recommendation
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+# # - rule: Activate form
+# # #  condition:
+# # #  - active_loop: customer_information_form
+# #   steps:
+# # #  - intent: chitchat
+# # #  - action: utter_chitchat
+# #   - action: utter_ask_name
+# #   - intent: inform_name
+# #   - action: utter_ask_age
+# #   - intent: inform_age
+# #   - action: utter_ask_skin_type
+# #   - intent: inform_skin_type
+# #   - action: utter_ask_allegies
+# #   - intent: inform_allergies
+
+# - rule: submit form
+#   condition: 
+#   - active_loop: customer_information_form
+#   steps:
+#     - action: customer_information_form
+#     - active_loop: null
+#     - action: submit_form
+
+
+

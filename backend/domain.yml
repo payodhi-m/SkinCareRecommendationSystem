@@ -1,0 +1,89 @@
+version: '3.1'
+intents:
+- affirm
+- customer_age
+- customer_allergies
+- customer_name
+- customer_preference
+- customer_skin_type
+- request_skincare
+- customer_price_range
+entities:
+- name
+- allergies
+- age
+- skin_type
+- price_range
+- preference
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+  age:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: age
+  skin_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: skin_type
+  allergies:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: allergies
+  price_range:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: price_range
+  customer_preference:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: preference
+forms:
+  customer_information_form:
+    required_slots:
+    - name
+    - age
+    - skin_type
+    - allergies
+    - price_range
+actions:
+- utter_recommendation_preference
+- utter_looking_for_recommendation
+- action_get_product_recommendation
+- utter_proceed_for_deeper_analysis
+- action_save_customer_information
+- action_proceed_to_story
+responses:
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_goodbye:
+  - text: Bye
+  utter_ask_name:
+  - text: What is your name?
+  utter_ask_age:
+  - text: What is your age?
+  utter_ask_skin_type:
+  - text: What is your skin type?, if unknown, please mention NA
+  utter_ask_allergies:
+  - text: Any known allergies, if no please say None?
+  utter_ask_price_range:
+  - text: What's your budget?
+  utter_ask_for_information:
+  - text: Please answer the following question
+  utter_recommendation_preference:
+  - text: Are you looking for general skincare or specific skin concern?
+  utter_looking_for_recommendation:
+  - text: Great! I will start looking for generic skin care products to recommend
+  utter_proceed_for_deeper_analysis:
+  - text: Proceed for Deeper Analysis?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,105 @@
+version: "3.1"
+nlu:
+- intent: customer_name
+  examples: |
+    - My name is [Afia](name)
+    - I'm [Payodhi](name)
+    - [Bhavya Shree](name) is my name
+    - [Kevin](name)
+    - I'm known as [Bob](name)
+    - I am [Alex](name)
+    - My name is [Alice](name)
+    - They call me [Priya](name)
+    - I go by the name [Sarah](name)
+    - I'm known as [David](name)
+    - You can call me [Eve](name)
+    - It's [Tony](name)
+    - My full name is [Jack Doe](name)
+    - My name's [Rachel](name)
+    - I'm called [Clara](name)
+    - I go by the name [Riya](name)
+    - [Keara](name)
+    - [Ella](name)
+    - My name is [Vartika](name)
+    - My name is [Sarah](name)
+    - I'm [Salman](name)
+    - My name is [Tia](name)
+- intent: customer_age
+  examples: |
+    - I'm [25](age) years old
+    - I am [19](age) years old
+    - My age is [34](age)
+    - [52](age) years old
+    - [65](age)
+    - My age is [22](age)
+    - [74](age)
+    - [20](age)
+    - I am [45](age)
+    - I am [27](age)
+    - [40](age)
+    - [21](age)
+- intent: customer_skin_type
+  examples: |
+    - I have [dry](skin_type) skin
+    - [oily](skin_type) skin
+    - [sensitive](skin_type)
+    - [normal](skin_type) skin type
+    - [NA](skin_type)
+    - I have very [dry](skin_type) skin
+    - [Oily]{"entity": "skin_type", "value": "oily"}
+- intent: customer_allergies
+  examples: |
+    - yes, [pollen](allergies)
+    - I'm allergic to [coconut](allergies)
+    - [aloe vera](allergies)
+    - no, I have no allergies
+    - [None](allergies)
+    - yes, I am allergic to [cashew](allergies)
+    - I have [pollen](allergies) allergy
+- intent: customer_price_range
+  examples: |
+    - yes, under [$100](price_range)
+    - should not be above [50](price_range)
+    - Under [$70](price_range)
+    - [25$](price_range)
+    - [$65](price_range)
+    - I want products under [$200](price_range)
+    - [75](price_range) to [250](price_range)
+    - from [$25](price_range) to [$85](price_range)
+- intent: request_skincare
+  examples: |
+    - Help me find skin care products
+    - Looking for skincare
+    - I want skin care recommendation
+    - Can you find me skin care product
+    - How can you help me?
+    - I am looking for skin care
+    - I am here to get skin care recommendation
+    - I am looking for skincare
+    - Help me get a skincare
+- intent: customer_preference
+  examples: |
+    - general
+    - specific
+    - generic
+    - routine
+    - daily
+    - day to day
+    - anything
+    - something
+- intent: affirm
+  examples: |
+    - yes
+    - ok
+    - okay
+    - k
+    - yeah
+    - go ahead
+    - sure
+    - yes please
+    - obviously
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct

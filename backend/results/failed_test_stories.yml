@@ -1,0 +1,51 @@
+version: "3.1"
+stories:
+- story: happy path 1 (./tests/test_stories.yml)
+  steps:
+  - intent: greet  # predicted: None: hello there!
+  - action: utter_greet
+  - intent: mood_great  # predicted: None: amazing
+  - action: utter_happy
+- story: happy path 2 (./tests/test_stories.yml)
+  steps:
+  - intent: greet  # predicted: None: hello there!
+  - action: utter_greet
+  - intent: mood_great  # predicted: None: amazing
+  - action: utter_happy
+  - intent: goodbye  # predicted: None: bye-bye!
+  - action: utter_goodbye
+- story: sad path 1 (./tests/test_stories.yml)
+  steps:
+  - intent: greet  # predicted: None: hello
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: None: not good
+  - action: utter_cheer_up  # predicted: action_listen
+  - action: utter_did_that_help
+  - intent: affirm  # predicted: None: yes
+  - action: utter_happy
+- story: sad path 2 (./tests/test_stories.yml)
+  steps:
+  - intent: greet  # predicted: None: hello
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: None: not good
+  - action: utter_cheer_up  # predicted: action_listen
+  - action: utter_did_that_help
+  - intent: deny  # predicted: None: not really
+  - action: utter_goodbye
+- story: sad path 3 (./tests/test_stories.yml)
+  steps:
+  - intent: greet  # predicted: None: hi
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: None: very terrible
+  - action: utter_cheer_up  # predicted: action_listen
+  - action: utter_did_that_help
+  - intent: deny  # predicted: None: no
+  - action: utter_goodbye
+- story: say goodbye (./tests/test_stories.yml)
+  steps:
+  - intent: goodbye  # predicted: None: bye-bye!
+  - action: utter_goodbye
+- story: bot challenge (./tests/test_stories.yml)
+  steps:
+  - intent: bot_challenge  # predicted: None: are you a bot?
+  - action: utter_iamabot
