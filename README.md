@@ -46,7 +46,6 @@ In today's world, where finding suitable skincare products can be challenging du
 - **Node.js** and **npm** for frontend setup
 - **Python 3.8+** for backend and machine learning models
 - **RASA** for natural language processing tasks
-- **TensorFlow or PyTorch** for the CNN-based image analysis model
 
 ### Steps
 1. **Clone the Repository**:
@@ -56,31 +55,34 @@ In today's world, where finding suitable skincare products can be challenging du
    ```
 
 2. **Frontend Setup**:
+   Ensure that Latest version of Node is installed in the system. Follow the steps to run the frontend server
    ```bash
    cd frontend
    npm install
    npm start
    ```
 
-3. **Backend Setup**:
+4. **Backend Setup**:
    ```bash
    cd backend
    pip install -r requirements.txt
    ```
 
-4. **NLP Setup**:
-   - Download RASA pretrained models and train the model for intent and entity extraction.
+5. **NLP Setup**:
    - Start the RASA server:
      ```bash
-     rasa run --enable-api
+     rasa run --enable-api --cors "http://localhost:3000" --port 5005
+     ```
+   - Start the action server:
+     ```bash
+     rasa run actions
      ```
 
-5. **Run the Project**:
+6. **Run the Project**:
    - Ensure both frontend and backend are running to test the complete system.
 
 ## Usage
 
-- **User Login**: Log in to the platform to start the skincare journey.
 - **Chat with the Bot**: Interact with the bot to enter skincare concerns, preferences, and upload skin images.
 - **Receive Recommendations**: Based on inputs, the bot provides a tailored skincare routine and product suggestions.
 - **Refinement**: The system learns from user feedback, enhancing personalization over time.
@@ -90,7 +92,7 @@ In today's world, where finding suitable skincare products can be challenging du
 ```plaintext
 ├── frontend/                # Contains React or Vue.js frontend
 ├── backend/                 # Backend server with REST API
-├── models/                  # Machine learning models for NLP and image analysis
+├── models/                  # Machine learning models for NLP
 ├── rasa/                    # RASA for intent and entity recognition
 ├── README.md                # Project documentation
 └── requirements.txt         # Python dependencies
