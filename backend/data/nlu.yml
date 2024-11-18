@@ -1,10 +1,22 @@
 version: "3.1"
 nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - Hey
+    - Hello
+    - Good morning
+    - good evening
+    - good afternoon
 - intent: customer_name
   examples: |
     - My name is [Afia](name)
     - I'm [Payodhi](name)
     - [Bhavya Shree](name) is my name
+    - [Muskan](name)
     - [Kevin](name)
     - I'm known as [Bob](name)
     - I am [Alex](name)
@@ -24,6 +36,8 @@ nlu:
     - My name is [Sarah](name)
     - I'm [Salman](name)
     - My name is [Tia](name)
+    - [Bobby](name)
+  
 - intent: customer_age
   examples: |
     - I'm [25](age) years old
@@ -38,6 +52,7 @@ nlu:
     - I am [27](age)
     - [40](age)
     - [21](age)
+
 - intent: customer_skin_type
   examples: |
     - I have [dry](skin_type) skin
@@ -46,7 +61,8 @@ nlu:
     - [normal](skin_type) skin type
     - [NA](skin_type)
     - I have very [dry](skin_type) skin
-    - [Oily]{"entity": "skin_type", "value": "oily"}
+    - [Oily](skin_type)
+    
 - intent: customer_allergies
   examples: |
     - yes, [pollen](allergies)

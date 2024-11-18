@@ -1,5 +1,7 @@
 version: '3.1'
 intents:
+- greet
+- utter_how_can_help
 - affirm
 - customer_age
 - customer_allergies
@@ -58,7 +60,7 @@ actions:
 - utter_recommendation_preference
 - utter_looking_for_recommendation
 - action_get_product_recommendation
-- utter_proceed_for_deeper_analysis
+- utter_proceed_to_recommendation
 - action_save_customer_information
 - action_proceed_to_story
 responses:
@@ -82,8 +84,10 @@ responses:
   - text: Are you looking for general skincare or specific skin concern?
   utter_looking_for_recommendation:
   - text: Great! I will start looking for generic skin care products to recommend
-  utter_proceed_for_deeper_analysis:
-  - text: Proceed for Deeper Analysis?
+  utter_proceed_to_recommendation:
+  - text: Proceed to recommendation?
+  utter_help_response:
+  - text: "Hello! How can I help you today?"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

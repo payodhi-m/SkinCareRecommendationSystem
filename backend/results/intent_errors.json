@@ -1,0 +1,18 @@
+[
+  {
+    "text": "25$",
+    "intent": "customer_price_range",
+    "intent_prediction": {
+      "name": "customer_age",
+      "confidence": 0.9578309655189514
+    }
+  },
+  {
+    "text": "75 to 250",
+    "intent": "customer_price_range",
+    "intent_prediction": {
+      "name": "customer_age",
+      "confidence": 0.8495897650718689
+    }
+  }
+]

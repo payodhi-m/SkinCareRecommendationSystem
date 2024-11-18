@@ -1,38 +1,21 @@
 [
   {
-    "text": "I'm looking for a moisturizer for dry skin.",
+    "text": "should not be above 50",
     "entities": [
       {
-        "start": 18,
-        "end": 29,
-        "value": "moisturizer",
-        "entity": "product"
-      },
-      {
-        "start": 34,
-        "end": 37,
-        "value": "dry",
-        "entity": "skintype"
+        "start": 20,
+        "end": 22,
+        "value": "50",
+        "entity": "price_range"
       }
     ],
     "predicted_entities": [
       {
-        "entity": "category",
-        "start": 18,
-        "end": 29,
-        "confidence_entity": 0.8943365216255188,
-        "value": "moisturizer",
-        "extractor": "DIETClassifier",
-        "processors": [
-          "EntitySynonymMapper"
-        ]
-      },
-      {
-        "entity": "skintype",
-        "start": 34,
-        "end": 37,
-        "confidence_entity": 0.9688102006912231,
-        "value": "dry",
+        "entity": "age",
+        "start": 20,
+        "end": 22,
+        "confidence_entity": 0.7644737362861633,
+        "value": "50",
         "extractor": "DIETClassifier",
         "processors": [
           "EntitySynonymMapper"
@@ -41,15 +24,68 @@
     ]
   },
   {
-    "text": "I am interested in cleansershell",
+    "text": "25$",
     "entities": [
       {
-        "start": 19,
-        "end": 28,
-        "value": "cleansers",
-        "entity": "category"
+        "start": 0,
+        "end": 3,
+        "value": "25$",
+        "entity": "price_range"
       }
     ],
-    "predicted_entities": []
+    "predicted_entities": [
+      {
+        "entity": "age",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.8665585517883301,
+        "value": "25",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "75 to 250",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "75",
+        "entity": "price_range"
+      },
+      {
+        "start": 6,
+        "end": 9,
+        "value": "250",
+        "entity": "price_range"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "age",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.8449940085411072,
+        "value": "75",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "age",
+        "start": 6,
+        "end": 9,
+        "confidence_entity": 0.8079041242599487,
+        "value": "250",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
   }
 ]

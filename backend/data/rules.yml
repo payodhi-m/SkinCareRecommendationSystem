@@ -1,8 +1,13 @@
 version: "3.1"
 
 rules:
+  - rule: greetings
+    steps:
+      - intent: greet
+      - action: utter_help_response
+      
   - rule: activate customer information form
-    conversation_start: true
+    #conversation_start: true
     steps: 
       - intent: request_skincare
       - action: customer_information_form
@@ -15,7 +20,7 @@ rules:
       - action: customer_information_form
       - active_loop: null
       - action: action_save_customer_information
-      - action: utter_proceed_for_deeper_analysis
+      - action: utter_proceed_to_recommendation
       #- action: action_proceed_to_story
     #wait_for_user_input: false
 
@@ -28,15 +33,15 @@ rules:
   #   steps:
   #   - intent: customer_preference
   #   - action: utter_looking_for_recommendation
-  - rule: Say goodbye anytime the user says goodbye
-    steps:
-    - intent: goodbye
-    - action: utter_goodbye
+  # - rule: Say goodbye anytime the user says goodbye
+  #   steps:
+  #   - intent: goodbye
+  #   - action: utter_goodbye
 
-  - rule: Say 'I am a bot' anytime the user challenges
-    steps:
-    - intent: bot_challenge
-    - action: utter_iamabot
+  # - rule: Say 'I am a bot' anytime the user challenges
+  #   steps:
+  #   - intent: bot_challenge
+  #   - action: utter_iamabot
 
 # # - rule: Activate form
 # # #  condition:
