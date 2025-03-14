@@ -1,0 +1,175 @@
+version: "3.1"
+
+# stories:
+#   - story: generic recommendation story
+#     steps: 
+    
+#     - intent: affirm
+#     - action: utter_recommendation_preference
+#     - intent: customer_preference
+#       entities:
+#         - preference: "generic"
+#     - slot_was_set:
+#       - requested_slot: "preference"
+#     - action: utter_looking_for_recommendation
+#     - action: action_get_product_recommendation
+
+  - story: interactive_story_1
+    steps:
+    - intent: request_skincare
+    - action: customer_information_form
+    - active_loop: customer_information_form
+    - slot_was_set:
+      - requested_slot: name
+    - intent: customer_name
+      entities:
+      - name: Tia
+    - slot_was_set:
+      - name: Tia
+    - action: customer_information_form
+    - slot_was_set:
+      - requested_slot: age
+    - intent: customer_age
+      entities:
+      - age: '21'
+    - slot_was_set:
+      - age: '21'
+    - action: customer_information_form
+    - slot_was_set:
+      - requested_slot: skin_type
+    - intent: customer_skin_type
+      entities:
+      - skin_type: oily
+    - slot_was_set:
+      - skin_type: oily
+    - action: customer_information_form
+    - slot_was_set:
+      - requested_slot: allergies
+    - intent: customer_allergies
+      entities:
+      - allergies: pollen
+    - slot_was_set:
+      - allergies: pollen
+    - action: customer_information_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_save_customer_information
+    - action: utter_proceed_for_deeper_analysis
+    - intent: affirm
+    - action: utter_recommendation_preference
+    - intent: customer_preference
+    - action: utter_looking_for_recommendation
+    - action: action_get_product_recommendation
+    - action: action_default_fallback
+    - action: action_default_fallback
+    - action: utter_proceed_for_deeper_analysis
+    - intent: affirm
+    - action: utter_recommendation_preference
+    - intent: customer_preference
+    - action: utter_looking_for_recommendation
+    - action: action_get_product_recommendation
+    
+
+
+
+#*********************************************
+# - story: happy path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_great
+#   - action: utter_happy
+
+# - story: interactive_story_1
+#   steps:
+#   - action: utter_goodbye
+#   - intent: greet
+#   - action: action_deactivate_loop
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+
+# # - story: greet and ask location
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - intent: ask_location
+# #     - action: utter_ask_location
+
+
+# # - story: get user information
+# #   steps: 
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: customer_information_form
+# #     - action: utter_submit
+# #     #- active_loop: customer_information_form
+# #     #- action: action_get_user_info_from_chatbot
+# #     #- action: action_save_user_details_to_csv
+
+# # - story: get user information
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: utter_ask_customer_name
+# #     - form: customer_information_form
+# #     - intent: customer_information
+# #       entities: 
+# #         - name: "Payodhi"
+# #         - age: 29
+# #         - skin_type: "dry"
+# #         - allegies: "NA"
+# #     - action: action_get_user_info_from_chatbot
+# #     - action: action_save_user_details_to_csv
+# - story: get user information
+#   steps: 
+#     - action: utter_ask_name
+#     - intent: inform_name
+#     - action: utter_ask_age
+#     - intent: inform_age
+#     - action: utter_ask_skin_type
+#     - intent: inform_skin_type
+#     - action: utter_ask_allegies
+#     - intent: inform_allergies
+
+# - story: product recommendation flow
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - intent: product_recommendation
+#     - action: utter_ask_for_category
+#     - intent: product_inform
+#       entities:
+#         - category: "moisturizer"
+#     - slot_was_set:
+#         - requested_slot: "category"
+#     - action: action_recommend_products
+
+# # - story: handle product category not supported flow
+# #   steps:
+# #     - intent: product_recommendation
+# #     - action: utter_ask_for_category
+# #     - intent: inform
+# #       entities: 
+# #         - category: "unknown category"
+# #     - action: utter_no_category_found
+
+# # - story: User interrupts the form and doesn't want to continue
+# #   steps: 
+# #   - intent: customer_information
+# #   - action: customer_information_form
+# #   - active_loop: customer_information_form
+# #   - intent: stop
+# #   #- action: utter_ask_continue
+# #   - intent: stop
+# #   - action: action_deactivate_loop
+# #   - active_loop: null
+
+
+
+
+
+
+
+

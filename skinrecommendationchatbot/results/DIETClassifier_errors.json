@@ -1,0 +1,55 @@
+[
+  {
+    "text": "I'm looking for a moisturizer for dry skin.",
+    "entities": [
+      {
+        "start": 18,
+        "end": 29,
+        "value": "moisturizer",
+        "entity": "product"
+      },
+      {
+        "start": 34,
+        "end": 37,
+        "value": "dry",
+        "entity": "skintype"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 18,
+        "end": 29,
+        "confidence_entity": 0.8943365216255188,
+        "value": "moisturizer",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "skintype",
+        "start": 34,
+        "end": 37,
+        "confidence_entity": 0.9688102006912231,
+        "value": "dry",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "I am interested in cleansershell",
+    "entities": [
+      {
+        "start": 19,
+        "end": 28,
+        "value": "cleansers",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

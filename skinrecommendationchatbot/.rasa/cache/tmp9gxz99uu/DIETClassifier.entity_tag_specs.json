@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-age",
+      "2": "I-age",
+      "3": "L-age",
+      "4": "U-age",
+      "5": "B-allergies",
+      "6": "I-allergies",
+      "7": "L-allergies",
+      "8": "U-allergies",
+      "9": "B-category",
+      "10": "I-category",
+      "11": "L-category",
+      "12": "U-category",
+      "13": "B-name",
+      "14": "I-name",
+      "15": "L-name",
+      "16": "U-name",
+      "17": "B-skin_type",
+      "18": "I-skin_type",
+      "19": "L-skin_type",
+      "20": "U-skin_type",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-age": 1,
+      "I-age": 2,
+      "L-age": 3,
+      "U-age": 4,
+      "B-allergies": 5,
+      "I-allergies": 6,
+      "L-allergies": 7,
+      "U-allergies": 8,
+      "B-category": 9,
+      "I-category": 10,
+      "L-category": 11,
+      "U-category": 12,
+      "B-name": 13,
+      "I-name": 14,
+      "L-name": 15,
+      "U-name": 16,
+      "B-skin_type": 17,
+      "I-skin_type": 18,
+      "L-skin_type": 19,
+      "U-skin_type": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

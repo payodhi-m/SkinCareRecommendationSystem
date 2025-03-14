@@ -1,0 +1,55 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: interactive_story_1
+  steps:
+  - action: utter_goodbye
+  - intent: greet
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+
+- story: greet and ask location
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_location
+    - action: utter_ask_location
+
+- story: product recommendation flow
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: product_recommendation
+    - action: utter_ask_for_category
+    - intent: inform
+      entities:
+        - category: "moisturizer"
+    - slot_was_set:
+        - requested_slot: "category"I
+    - action: action_recommend_products
+
+# - story: handle product category not supported flow
+#   steps:
+#     - intent: product_recommendation
+#     - action: utter_ask_for_category
+#     - intent: inform
+#       entities: 
+#         - category: "unknown category"
+#     - action: utter_no_category_found
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+

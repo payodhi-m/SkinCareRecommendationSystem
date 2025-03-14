@@ -1,0 +1,129 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hello
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - Not good
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: ask_location
+  examples: |
+    - where are you located?
+    - what is your location?
+
+- intent: enquire
+  examples: |
+    - what are your services?
+    - how can you help me?
+    - what is your functionality?
+
+- intent: product_recommendation
+  examples: |
+    - Can you recommend skin care product
+    - I need help finding skin care product
+    - What products do you have for me?
+    - I need a lotion (category) 
+    - I am interested in [cleansers](category)
+    - I am looking for a [cleanser](category)
+    - I am looking for a [sun protect](category)
+    - [eye cream](category)
+    - I am looking for [moisturizer](category)
+    - Any suggestions for a [cream](category) for [oily](skin_type) skin
+    - Looking for [cleanser](category) for [dry](skin_type) skin
+    - I am looking for [serum](category) for [sensitive](skin_type) skin
+    - Suggest some good [toner](category) for [normal](skin_type)
+  
+
+- intent: inform
+  examples: |
+    - moisturizer(category)
+    - I am looking for a [moisturizer](category)
+    - can you recommend a [cleanser](category)?
+    - I want to buy [lotion](category)
+    - show me some [cream](category)
+    - I need a [sunblock](category)
+    - I'm looking for a [sunscreen](category)
+    - I want a [serum](category)
+    - can you suggest a [sun protect](category)
+    - how about a [toner](category)
+    - show me some [serums](category)
+    - I am looking for a [sun screen](category)
+    - I am looking for a [spf](category)

@@ -1,0 +1,27 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"customer_information_form\"}}]": "action_save_customer_information",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"customer_information_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_save_customer_information\"}}]": "utter_proceed_for_deeper_analysis",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"customer_information_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_save_customer_information\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_proceed_for_deeper_analysis\"}}]": "action_listen",
+      "[{}]": "action_listen",
+      "[{}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"request_skincare\"}}]": "customer_information_form",
+      "[{}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"request_skincare\"}}, {\"active_loop\": {\"name\": \"customer_information_form\"}, \"prev_action\": {\"action_name\": \"customer_information_form\"}, \"user\": {\"intent\": \"request_skincare\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"customer_information_form\"}, \"prev_action\": {\"action_name\": \"customer_information_form\"}, \"user\": {\"intent\": \"request_skincare\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"customer_information_form\"}, \"prev_action\": {\"action_name\": \"customer_information_form\"}, \"slots\": {\"transition_to_story\": [1.0, 1.0]}, \"user\": {\"intent\": \"request_skincare\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"customer_information_form\"}, \"prev_action\": {\"action_name\": \"customer_information_form\"}, \"slots\": {\"name\": [1.0], \"transition_to_story\": [1.0, 1.0]}, \"user\": {\"entities\": [\"name\"], \"intent\": \"customer_name\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"customer_information_form\"}, \"prev_action\": {\"action_name\": \"customer_information_form\"}, \"slots\": {\"age\": [1.0], \"name\": [1.0], \"skin_type\": [1.0], \"transition_to_story\": [1.0, 1.0]}, \"user\": {\"entities\": [\"skin_type\"], \"intent\": \"customer_skin_type\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"customer_information_form\"}, \"prev_action\": {\"action_name\": \"action_default_fallback\"}, \"slots\": {\"age\": [1.0], \"name\": [1.0], \"skin_type\": [1.0], \"transition_to_story\": [1.0, 1.0]}, \"user\": {\"intent\": \"customer_allergies\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "handling active loops and forms - customer_information_form",
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start",
+      "predicting default action with intent back"
+    ]
+  }
+}

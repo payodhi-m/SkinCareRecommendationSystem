@@ -1,0 +1,16 @@
+version: "1"
+disable_existing_loggers: False
+formatters:
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+handlers:
+  file:
+    class: logging.FileHandler
+    filename: /Users/payodhi/aiproject/skinrecommendationchatbot/conversationLogs.log  # Specify your desired log file location here
+    level: DEBUG  # You can adjust the log level as needed (DEBUG, INFO, WARNING, ERROR)
+    formatter: simple
+loggers:
+  rasa:
+    level: DEBUG  # Set the log level for Rasa
+    handlers:
+      - file
